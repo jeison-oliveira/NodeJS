@@ -1,24 +1,25 @@
 import express, { Request, Response } from 'express';
 import validateEnv from './utils/validateEnv';
 import dotenv from 'dotenv';
-import morgan from 'morgan';
-
+import logger from './middlewares/logger';
+import router from './router/router';
 dotenv.config();
 validateEnv();
 
 const PORT = process.env.PORT ?? 3333;
 const app = express();
+const publicPath = `${process.cwd()}/public`;
+console.log(process.cwd());
 
-app.use(morgan('combined'));
+app.use(logger('completo'));
 
-app.use((req, res, next) => {
-  console.log('oi');
-  next();
-});
+app.use(router);
 
-app.get('/', (req: Request, res: Response) => {
-  res.end('Welcome to Web Academy!');
-});
+app.use('/css', express.static(`${publicPath}/css`));
+
+app.use('/js', express.static(`${publicPath}/js`));
+
+app.use('/img', express.static(`${publicPath}/img`));
 
 app.listen(PORT, () => {
   console.log(`Servidor escutando na porta ${PORT}`);
