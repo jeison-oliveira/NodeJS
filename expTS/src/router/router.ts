@@ -1,22 +1,22 @@
 import { Router, Request, Response } from 'express';
+import mainControler from '../controllers/main';
 
 const router = Router();
-const publicPath = `${process.cwd()}/public`;
 
-router.get('/page', (req, res) => {
-  res.sendFile(`${publicPath}/html/index.html`);
-});
+router.get('/', mainControler.welcome);
 
-router.get('/', (req: Request, res: Response) => {
-  res.end('Welcome to Web Academy!');
-});
+router.get('/bemvindo/:nome', mainControler.bemvindo);
 
-router.get('/bemvindo/:nome', (req, res) => {
-  res.send(`Bem vindo, ${req.params.nome}`);
-});
+router.get('/lorem', mainControler.lorem);
 
-router.get('/lorem', (req, res) => {
-  res.sendFile(`${publicPath}/html/index.html`);
-});
+router.get('/hb1', mainControler.hb1);
+
+router.get('/hb2', mainControler.hb2);
+
+router.get('/hb3', mainControler.hb3);
+
+router.get('/hb4', mainControler.hb4);
+
+router.get('/hb5', mainControler.hb5);
 
 export default router;
