@@ -1,4 +1,4 @@
-import express, { Request, Response } from 'express';
+import express from 'express';
 import validateEnv from './utils/validateEnv';
 import dotenv from 'dotenv';
 import logger from './middlewares/logger';

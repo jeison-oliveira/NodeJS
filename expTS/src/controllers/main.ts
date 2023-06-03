@@ -53,15 +53,19 @@ const hb4 = (req: Request, res: Response) => {
 };
 
 const hb5 = (req: Request, res: Response) => {
-  const profs = [
-    { nome: 'Tayana Conte', sala: 124 },
-    { nome: 'Horácio', sala: 125 },
-    { nome: 'Edleno', sala: 128 },
-    { nome: 'Souto', sala: 15 },
+  const technologies = [
+    { name: 'Express', type: 'Framework', poweredByNodejs: true },
+    { name: 'Laravel', type: 'Framework', poweredByNodejs: false },
+    { name: 'React', type: 'Library', poweredByNodejs: true },
+    { name: 'Handlebars', type: 'Engine View', poweredByNodejs: true },
+    { name: 'Django', type: 'Framework', poweredByNodejs: false },
+    { name: 'Docker', type: 'Virtualization', poweredByNodejs: false },
+    { name: 'Sequelize', type: 'ORM tool', poweredByNodejs: true },
   ];
-  res.render('main/hb4', {
-    profs,
+
+  res.render('main/hb5', {
+    technologies,
   });
 };
 
-export default { bemvindo, lorem, hb1, hb2, hb3, hb4, welcome };
+export default { bemvindo, lorem, hb1, hb2, hb3, hb4, hb5, welcome };
