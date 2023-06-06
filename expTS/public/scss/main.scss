@@ -1,8 +1,23 @@
 @import "./styles.scss";
+@import "./variables.scss";
+
+/*
+* Fontawesome
+*/
 // importing core styling file
-@import "../../node_modules/@fontawesome/fontawesome-free/scss/fontawesome.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss";
 
 // our project needs Solid + Brands
-@import "../../node_modules/@fontawesome/fontawesome-free/scss/solid.scss";
-@import "../../node_modules/@fontawesome/fontawesome-free/scss/brands.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss";
+@import "../../node_modules/@fortawesome/fontawesome-free/scss/brands.scss";
+
+/*
+* Bootstrap
+*/
 @import "../../node_modules/bootstrap/scss/bootstrap.scss";
+
+/*
+* Bootswatch
+*/
+@import "./bootswatch/bootswatch.scss";
+@import "./bootswatch/custom.min.scss";
